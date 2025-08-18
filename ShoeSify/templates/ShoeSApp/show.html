@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Show Shoes</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Brand</th>
+            <th>Category</th>
+            <th>Color</th>
+            <th>Gender</th>
+            <th>Size</th>
+            <th>Stock</th>
+            <th>Price</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+        {% for shoe in shoes_obj_qs %}
+            <tr>
+                <td>{{shoe.id}}</td>
+                <td>{{shoe.name}}</td>
+                <td>{{shoe.brand}}</td>
+                <td>{{shoe.category}}</td>
+                <td>{{shoe.color}}</td>
+                <td>{{shoe.gender}}</td>
+                <td>{{shoe.size}}</td>
+                <td>{{shoe.stock}}</td>
+                <td>{{shoe.price}}</td>
+                <td><a href="{% url 'update-shoes' shoe.id %}"><button>Update</button></a></td>
+                <td><a href="{% url 'delete-shoes' shoe.id %}"><button>Delete</button></a></td>
+            </tr>
+        {% endfor %}
+    </table>
+    <br><br>
+    <a href="{% url 'add-shoes' %}"><button>Add Shoes</button></a>
+</body>
+</html>
