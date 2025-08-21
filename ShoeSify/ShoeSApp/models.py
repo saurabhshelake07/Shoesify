@@ -10,3 +10,4 @@ class ShoeModel(models.Model):
     size = models.IntegerField()
     stock = models.IntegerField()
     price = models.FloatField()
+
