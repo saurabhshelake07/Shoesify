@@ -5,7 +5,7 @@ from .models import ShoeModel
 
 # Create your views here.
 def first_view(request):
-    temp="ShoeSApp/first.html"
+    temp="layout.html"
     context={}
     return render(request,temp,context)
 

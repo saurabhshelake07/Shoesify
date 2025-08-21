@@ -1,11 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+{% extends "layout.html" %}
+
+
+{% block title %}
     <title>Show Shoes</title>
-</head>
-<body>
-    <table>
+{% endblock %}
+
+
+{% block content %}
+    <table class="table table-dark table-striped" style="width:80%; margin-left:10%;">
         <tr>
             <th>ID</th>
             <th>Name</th>
@@ -30,12 +32,11 @@
                 <td>{{shoe.size}}</td>
                 <td>{{shoe.stock}}</td>
                 <td>{{shoe.price}}</td>
-                <td><a href="{% url 'update-shoes' shoe.id %}"><button>Update</button></a></td>
-                <td><a href="{% url 'delete-shoes' shoe.id %}"><button>Delete</button></a></td>
+                <td><a href="{% url 'update-shoes' shoe.id %}"><button class="btn btn-warning">Update</button></a></td>
+                <td><a href="{% url 'delete-shoes' shoe.id %}"><button class="btn btn-danger">Delete</button></a></td>
             </tr>
         {% endfor %}
     </table>
     <br><br>
-    <a href="{% url 'add-shoes' %}"><button>Add Shoes</button></a>
-</body>
-</html>
+    <a href="{% url 'add-shoes' %}"><button class="btn btn-primary" style="margin-left:45%;">Add Shoes</button></a>
+{% endblock %}
